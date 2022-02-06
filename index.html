@@ -1,49 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
-    <link rel = "stylesheet" href = "assets/style.css">
-    <script src = "assets/script.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Jon's weather forecast</title>
 </head>
-<body class="container">
+<body>
+    <header>
+      <h1>How's the Weather?</h1>
 
-    <div class="row text-center bg-primary text-white">
-      <h1>Weather Dashboard</h1>
-    </div>
-  
-    <div class="row">
-        
-        <div class="column col-3">
-          <form>
-            <label class="text-primary">Pick a City:</label>
-            <input class="form-control my-2 text-primary" type="search" placeholder="Search" id="city-input">
-            <button class="btn btn-outline-primary my-2" style="width: 100%" type="submit" id="search-button">Enter City</button>
+    </header>
+
+    <main>
+      <section id="search-container">
+        <aside>
+          <div id="selector" class="selector-hidden"></div>
+          <form id="search">
+            <input type="text">
+            <button type="submit" id="search-btn">Search</button>
           </form>
-  
-          <button class="btn btn-outline-primary my-2" style="width: 100%" type="submit" id="clear-button">Clear History</button>
-          
-          <div class="border-top border-primary" id="past-searches">
-            <!-- Past city searches will go here  -->
+           <button id="clear-history">Clear search history</button>
+        </aside>
+        <div id="previous-searches">  
+
+        </div>
+      </section>
+      <section id="weather-display{">
+        <div id="main-card">
+          <div id="todays-day"><span id="city-name">Winnipeg</span> - <span id="todays-date"></span></div>
+          <hr>
+          <div id="todays-info">
+            <div><img src="" id="today-img"></div>
+            <span id="today-max"></span>
+            <span id="today-min"></span>
+            <span id="today-wind"></span>
+            <span id="today-humidity"></span>
+            <span id="today-uv" class="severe-uv">UV: High</span>
           </div>
-  
         </div>
-  
-        <div class="column col-9">
-          <div class="row" id="currentConditions"></div>
-          <!-- Current city current weather conditions will go here  -->
-          
-          <div class="row" id="fiveDayForecastHeader"></div>
-          <div class="d-flex flex-row flex-wrap justify-content-between" id="fiveDayForecast"></div>
-          <!-- Current city 5 day forecast will go here  -->
+        <div class="five-day">
+          5 day forecast
         </div>
-  
-    </div>
+        <div id="container-daily-cards">
+          <div class="daily-card" data-fiveday="0">
+            <p class="day"></p>
+            <hr>
+            <img src="" class="weather-img">
+            <p class="max"></p>
+            <p class="min"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>        
+          <div class="daily-card" data-fiveday="1">
+            <p class="day"></p>
+            <hr>
+            <img src="" class="weather-img">
+            <p class="max"></p>
+            <p class="min"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>        
+          <div class="daily-card" data-fiveday="2">
+            <p class="day"></p>
+            <hr>
+            <img src="" class="weather-img">
+            <p class="max"></p>
+            <p class="min"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>        
+          <div class="daily-card" data-fiveday="3">
+            <p class="day"></p>
+            <hr>
+            <img src="" class="weather-img">
+            <p class="max"></p>
+            <p class="min"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>        
+          <div class="daily-card" data-fiveday="4">
+            <p class="day"></p>
+            <hr>
+            <img src="" class="weather-img">
+            <p class="max"></p>
+            <p class="min"></p>
+            <p class="wind"></p>
+            <p class="humidity"></p>
+          </div>
+
+        </div>
+      </section>
+      
+    </main>
+
+  <script src="./assets/js/cities.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+ 
 </body>
 </html>
