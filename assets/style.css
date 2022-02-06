@@ -15,7 +15,7 @@ h1.temp{
     margin: 0;
 }
 
-.card {
+.card:hover{
     background: #d4ebf2;
     color:black;
     padding: 2em;
@@ -23,6 +23,7 @@ h1.temp{
     width: 100%;
     max-width: 420px;
     margin: 1em;
+    cursor: pointer;
 }
 .search{
     display:flex;
