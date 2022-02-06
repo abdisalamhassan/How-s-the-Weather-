@@ -1,106 +1,112 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Jon's weather forecast</title>
-</head>
-<body>
-    <header>
-      <h1>How's the Weather?</h1>
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Weather Dashboard</h1>
     </header>
 
     <main>
-      <section id="search-container">
-        <aside>
-          <div id="selector" class="selector-hidden"></div>
-          <form id="search">
-            <input type="text">
-            <button type="submit" id="search-btn">Search</button>
-          </form>
-           <button id="clear-history">Clear search history</button>
-        </aside>
-        <div id="previous-searches">  
 
-        </div>
-      </section>
-      <section id="weather-display{">
-        <div id="main-card">
-          <div id="todays-day"><span id="city-name">Winnipeg</span> - <span id="todays-date"></span></div>
-          <hr>
-          <div id="todays-info">
-            <div><img src="" id="today-img"></div>
-            <span id="today-max"></span>
-            <span id="today-min"></span>
-            <span id="today-wind"></span>
-            <span id="today-humidity"></span>
-            <span id="today-uv" class="severe-uv">UV: High</span>
-          </div>
-        </div>
-        <div class="five-day">
-          5 day forecast
-        </div>
-        <div id="container-daily-cards">
-          <div class="daily-card" data-fiveday="0">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>        
-          <div class="daily-card" data-fiveday="1">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>        
-          <div class="daily-card" data-fiveday="2">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>        
-          <div class="daily-card" data-fiveday="3">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>        
-          <div class="daily-card" data-fiveday="4">
-            <p class="day"></p>
-            <hr>
-            <img src="" class="weather-img">
-            <p class="max"></p>
-            <p class="min"></p>
-            <p class="wind"></p>
-            <p class="humidity"></p>
-          </div>
+        <div id="search-pane">
+            <form class="search">
+                <label for="city-input">City Search: </label>
+                <input id="city-input" type="text" class="search-input border">
+                <button id="search-button" class="border"><i class="fas fa-search"></i></button>
+            </form>
 
+            <form id="recent-searches" class="search">
+                <label for="recent-dropdown">Recent Searches: </label>
+                <select id="recent-dropdown" class="search-input border">
+                    <option>--Pick a City--</option>
+                </select>
+                <button id="recent-searches-button" class="border"><i class="fas fa-search"></i></button>
+            </form>
         </div>
-      </section>
-      
+
+        <br>
+        <h2>Today's Weather</h2>
+        <hr>
+
+        <div class="flex align content center">
+            <div class="weather-card border">
+                <h3 id="city-name"></h3>
+                <h4 id="current-date"><span class="date"></span></h4>
+                <img id=currentWeatherIcon>
+                <img id="icon-0">
+                <ul id="current-weather-list">
+                    <li>Temp (°C): <span id="temperature"></span></li>
+                    <li>Humidity (%): <span id="humidity"></span></li>
+                    <li>Wind Speed (m/sec): <span id="wind-speed"></span></li>
+                    <li>UV index: <span id="uv-index"></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Five Day Forecast</h2>
+        <hr>
+        <section class="flex">
+            <div class="weather-card border">
+                <h4 id="date-1"></h4>
+                <img id="icon-1">
+                <ul id="day-1">
+                    <li>Temp (°C): <span class="temperature"></span></li>
+                    <li>Humidity (%): <span class="humidity"></span></li>
+                    <li>Wind Speed (m/sec): <span class="wind-speed"></span></li>
+                </ul>
+            </div>
+            <div class="weather-card border">
+                <h4 id="date-2"></h4>
+                <img id="icon-2">
+                <ul id="day-2">
+                    <li>Temp (°C): <span class="temperature"></span></li>
+                    <li>Humidity (%): <span class="humidity"></span></li>
+                    <li>Wind Speed (m/sec): <span class="wind-speed"></span></li>
+                </ul>
+            </div>
+            <div class="weather-card border">
+                <h4 id="date-3"></h4>
+                <img id="icon-3">
+                <ul id="day-3">
+                    <li>Temp (°C): <span class="temperature"></span></li>
+                    <li>Humidity (%): <span class="humidity"></span></li>
+                    <li>Wind Speed (m/sec): <span class="wind-speed"></span></li>
+                </ul>
+            </div>
+            <div class="weather-card border">
+                <h4 id="date-4"></h4>
+                <img id="icon-4">
+                <ul id="day-4">
+                    <li>Temp (°C): <span class="temperature"></span></li>
+                    <li>Humidity (%): <span class="humidity"></span></li>
+                    <li>Wind Speed (m/sec): <span class="wind-speed"></span></li>
+                </ul>
+            </div>
+            <div class="weather-card border">
+                <h4 id="date-5"></h4>
+                <img id="icon-5">
+                <ul id="day-5">
+                    <li>Temperature (°C): <span class="temperature"></span></li>
+                    <li>Humidity (%): <span class="humidity"></span></li>
+                    <li>Wind Speed (m/sec): <span class="wind-speed"></span></li>
+                </ul>
+            </div>
+        </section>
+
     </main>
-
-  <script src="./assets/js/cities.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
- 
+    <script src="./assets/script.js"></script>
 </body>
+
 </html>
