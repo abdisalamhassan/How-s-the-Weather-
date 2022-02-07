@@ -44,6 +44,11 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 
 ## Screenshots
+<img width="1440" alt="Screen Shot 2022-02-06 at 6 45 16 PM" src="https://user-images.githubusercontent.com/95972020/152707535-aba0eb37-5a93-4c04-a6fb-aa042e047bb4.png">
+<img width="1440" alt="Screen Shot 2022-02-06 at 6 46 00 PM" src="https://user-images.githubusercontent.com/95972020/152707536-e0746503-f6e1-47b3-9a2b-cb1fbb26c4e5.png">
+
+
+## Live Link
 https://abdisalamhassan.github.io/Weather-Check-/
 
 ## Contribution
